@@ -16,19 +16,20 @@ jobs:
         node-version: [21.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           # fetch all commits to get last updated time or other git log info
           fetch-depth: 0
-      - uses: pnpm/action-setup@v2.2.2
+      - uses: pnpm/action-setup@v3
         with:
-          version: 7.17.0
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
-      - run: pnpm config set registry https://registry.npm.taobao.org && pnpm i
+          node-version: 21
+          
+    - name: 安装 Pnpm  
+      uses: pnpm/action-setup@v2
+      id: pnpm-install
+      with:
+          version: 7
+          run_install: true
 
       # run build script
       - name: Build VuePress site
