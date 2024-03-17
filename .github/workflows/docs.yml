@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [21.x]
+        node-version: [18.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-      - run: pnpm install
+      - run: pnpm i
 
       # run build script
       - name: Build VuePress site
