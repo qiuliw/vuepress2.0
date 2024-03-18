@@ -32,7 +32,7 @@ jobs:
 
       # run build script
       - name: Build VuePress site
-        run: pnpm rdocs:build
+        run: pnpm docs:build
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3
