@@ -17,6 +17,9 @@ export default defineUserConfig({
             {
                 text: '前言',
                 link: '/'
+            },{
+                text: 'Java',
+                link: '/posts/Java/JavaSE.md',
             },
             '/posts/text.md',
             '/posts/text_two.md',
